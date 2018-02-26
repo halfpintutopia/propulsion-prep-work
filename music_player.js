@@ -4,7 +4,7 @@ function Track(artist, title, album) {
   this.album = album;
 }
 
-var driveTrack = new Track('Incubus', 'Drive', 'Make Yourself');
+// var driveTrack = new Track('Incubus', 'Drive', 'Make Yourself');
 
 function Player() {
   this.tracks = [];
