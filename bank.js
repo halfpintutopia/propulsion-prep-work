@@ -12,23 +12,23 @@ Bank.prototype.addCustomer = function(customer) {
 Bank.prototype.deposit = function(customer, amount) {
   for(var i = 0; i < this.customers.length; i++) {
     if(amount > 0 && this.customers[i].name === customer) {
-      bank.customers[i].balance += amount;
+      this.customers[i].balance += amount;
     }
   }
 }
 
 Bank.prototype.withdraw = function(customer, amount) {
   for(var j = 0; j < this.customers.length; j++) {
-    if(bank.customers[j].balance - amount >= 0 && this.customers[j].name === customer) {
-      bank.customers[j].balance -= amount;
+    if(this.customers[j].balance - amount >= 0 && this.customers[j].name === customer) {
+      this.customers[j].balance -= amount;
     }
   }
 }
 
 Bank.prototype.printAccount = function(customer) {
   for(var k = 0; k < this.customers.length; k++) {
-    if(bank.customers[k].name === customer) {
-      console.log(bank.customers[k].name + " account is " + bank.customers[k].balance);
+    if(this.customers[k].name === customer) {
+      console.log(this.customers[k].name + " account is " + this.customers[k].balance);
     }
   }
 }
