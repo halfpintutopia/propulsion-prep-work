@@ -1,22 +1,36 @@
-function Bank(customers, balance) {
-  this.customers = {};
+function Bank(customers) {
+  this.customers = [];
 }
 
 Bank.prototype.addCustomer = function(customer) {
-  this.customers.name = customer,
-  this.customers.balance = 0
-}
-
-Bank.prototype.printAccount = function(customer) {
-  console.log(this.customers.name + " account is " + this.customers.balance);
+    this.customers.push({
+      name: customer,
+      balance: 0,
+    });
 }
 
 Bank.prototype.deposit = function(customer, amount) {
-  return this.customers.balance += amount;
+  for(var i = 0; i < this.customers.length; i++) {
+    if(amount > 0 && this.customers[i].name === customer) {
+      bank.customers[i].balance += amount;
+    }
+  }
 }
 
 Bank.prototype.withdraw = function(customer, amount) {
-  return this.customers.balance -= amount;
+  for(var j = 0; j < this.customers.length; j++) {
+    if(bank.customers[j].balance - amount >= 0 && this.customers[j].name === customer) {
+      bank.customers[j].balance -= amount;
+    }
+  }
+}
+
+Bank.prototype.printAccount = function(customer) {
+  for(var k = 0; k < this.customers.length; k++) {
+    if(bank.customers[k].name === customer) {
+      console.log(bank.customers[k].name + " account is " + bank.customers[k].balance);
+    }
+  }
 }
 
 var bank = new Bank();
@@ -30,4 +44,4 @@ bank.deposit('Raj', 10000);
 bank.printAccount('Raj');
 bank.withdraw('Raj', 100);
 bank.printAccount('Sheldor'); // this should print 'Sheldor account is 10'
-bank.printAccount('Raj');
+bank.printAccount('Raj'); // this should print 'Raj account is 9900'
