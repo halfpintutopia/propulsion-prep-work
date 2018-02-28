@@ -21,6 +21,8 @@ Bank.prototype.withdraw = function(customer, amount) {
   for(var j = 0; j < this.customers.length; j++) {
     if(this.customers[j].balance - amount >= 0 && this.customers[j].name === customer) {
       this.customers[j].balance -= amount;
+    } else {
+      console.log("I am sorry " + customer + "." + "You have insufficient funds.")
     }
   }
 }
