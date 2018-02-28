@@ -1,0 +1,40 @@
+*, body {
+  margin: auto;
+  padding: auto;
+}
+
+input {
+  height: 1em;
+  margin: 10px;
+  font-size: 2em;
+}
+
+button {
+  height: 1.6em;
+  margin: 10px 10px 60px 10px;
+  font-size: 1.5em;
+  background-color: #388965;
+  color: #F5F7F7;
+}
+
+.input-buttons {
+  display: grid;
+  max-width: 900px;
+  position: relative;
+  grid-template: 1fr / 1fr 1fr 1fr;
+  /*align-items: center;
+  align-self: center;*/
+  text-align: center;
+  border-bottom: 2px solid #95A5A6;
+}
+
+.total-area {
+  margin-top: 60px;
+  display: grid;
+  grid-template: 1fr / 1fr;
+}
+
+.total-area p {
+  /*height: 1em;*/
+  font-size: 3em;
+}
